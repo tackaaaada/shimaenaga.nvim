@@ -83,14 +83,15 @@ For Lualine, set the theme and separators while keeping your existing components
 | Types and built-in types | Cyan |
 | Strings | Green |
 | Numbers and constants | Orange |
-| Operators and special characters | Cherry blossom pink |
+| Operators | Cooler cherry blossom pink in Yukiyo |
+| Special characters | Cherry blossom pink |
 | Variables, parameters, and properties | Main text color |
 | Brackets | A blend of orange and the main text color |
 | Warnings | Yellow |
 | Errors and deleted diff lines | Red |
 
 Yukiyo uses `#070c17` for the editor background, `#0b1221` for menus, and `#111b2f` for the statusline.
-Ryuhyo uses a soft white background, `#e9eef5`.
+Ryuhyo uses a soft blue-white background, `#e3eaf2`.
 See the [palette specification](docs/color-spec.md) and [highlight coverage](docs/highlight-scope.md) for details (Japanese).
 
 ## Preview

@@ -46,6 +46,7 @@ def palettes():
         required = {"bg", "bg_dark", "fg", "fg_dark", "comment", "purple", "blue", "cyan", "green", "orange", "magenta"}
         if missing := required - colors.keys():
             raise ValueError(f"Missing {style} colors: {sorted(missing)}")
+        colors["operator"] = colors.get("operator", colors["magenta"])
         colors["bracket"] = blend(colors["orange"], colors["fg"], 0.2)
         result[style] = colors
     return result
@@ -83,7 +84,7 @@ def draw_card(root, defs, x, style, label, colors):
         "function": colors["blue"],
         "string": colors["green"],
         "number": colors["orange"],
-        "operator": colors["magenta"],
+        "operator": colors["operator"],
         "bracket": colors["bracket"],
         "delimiter": colors["fg_dark"],
         "text": colors["fg"],

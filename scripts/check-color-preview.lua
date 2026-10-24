@@ -27,7 +27,7 @@ local function contrast(a,b)
 end
 local expected={
   yukiyo={comment='#7d8f92',selection='#132c44',search='#322c13',diff_add='#191f18',diff_change='#0d1e2f',diff_delete='#24141e',diff_text='#142f48',border='#3f484f'},
-  ryuhyo={comment='#657488',selection='#c0d6ed',search='#dad6c7',diff_add='#e2e7e0',diff_change='#d8e6f5',diff_delete='#efdbe3',diff_text='#bbd3eb',border='#b8c0cb'},
+  ryuhyo={comment='#566a7f',selection='#c0d6ed',search='#dad6c7',diff_add='#e2e7e0',diff_change='#d8e6f5',diff_delete='#efdbe3',diff_text='#bbd3eb',border='#b5beca'},
 }
 local legacy_accents={purple="#6663cb",blue="#166eb7",cyan="#088179",green="#657200",orange="#b54c00",magenta="#c52e7c",yellow="#876804",red="#c60217"}
 local revised_accents={purple='#5146c7',blue='#005cad',cyan='#00756b',green='#526700',orange='#a63f00',magenta='#b51070',yellow='#785800',red='#b80018'}
@@ -82,7 +82,7 @@ for _,style in ipairs({'yukiyo','ryuhyo'}) do
         local bg=hl(name).bg
         if transparent then assert(bg==nil,name..' unexpectedly opaque') else assert(bg~=nil,name..' missing opaque background') end
       end
-      for name,color in pairs({Keyword=c.purple,Function=c.blue,Type=c.cyan,Text=c.fg,Constant=c.orange,String=c.green,Operator=c.magenta,Punctuation=c.fg_dark,Bracket=c.bracket,Comment=c.comment,Error=c.red,Warn=c.yellow}) do
+      for name,color in pairs({Keyword=c.purple,Function=c.blue,Type=c.cyan,Text=c.fg,Constant=c.orange,String=c.green,Operator=c.operator,Punctuation=c.fg_dark,Bracket=c.bracket,Comment=c.comment,Error=c.red,Warn=c.yellow}) do
         assert(hex(role(name).fg)==color,name..' role mismatch')
       end
       assert(role('Comment').italic and not role('Keyword').italic)
@@ -116,18 +116,19 @@ preview.render()
 press('<Tab>');assert(preview.state.style=='ryuhyo')
 press('t');assert(not preview.state.transparent and hl('Normal').bg~=nil)
 local original_light=hl('Normal').bg
-press('b');assert(preview.state.background=='soft' and hex(hl('Normal').bg)=='#e9eef5')
-assert(hex(hl('NormalFloat').bg)=='#dfe5ee' and hex(hl('CursorLine').bg)=='#d5deeb')
+press('b');assert(preview.state.background=='soft' and hex(hl('Normal').bg)=='#e3eaf2')
+assert(hex(hl('NormalFloat').bg)=='#d4deea' and hex(hl('CursorLine').bg)=='#cbd8e8')
 assert(hex(role('Function').fg)==revised_accents.blue)
 assert(hl('Normal').bg~=original_light)
 for page=1,#preview.pages do
   preview.state.page=page
   preview.render()
   local c=preview.colors('ryuhyo','soft')
+  assert(contrast(c.comment,c.bg)>=4.5)
   assert(hex(role('Selected').bg)==c.selection and hex(role('DiffText').bg)==c.diff_text)
 end
 press('t');assert(hl('Normal').bg==nil and hl('NormalFloat').bg==nil)
-press('t');assert(hex(hl('Normal').bg)=='#e9eef5')
+press('t');assert(hex(hl('Normal').bg)=='#e3eaf2')
 press('b');assert(preview.state.background=='original' and hl('Normal').bg==original_light)
 preview.state.page=1
 press('[');assert(preview.state.page==#preview.pages)

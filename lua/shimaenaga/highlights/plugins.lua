@@ -3,7 +3,7 @@ local M = {}
 function M.apply(groups, c, opts)
   local surface = opts.transparent and c.none or c.bg
   -- Existing plugin definitions retain their names and enable/disable behavior.
-  local kinds={Variable='fg',Property='fg',Field='fg',Reference='fg',Constant='orange',Value='orange',EnumMember='orange',Function='blue',Method='blue',Constructor='cyan',Class='cyan',Interface='cyan',Struct='cyan',Enum='cyan',TypeParameter='cyan',Module='cyan',Keyword='purple',Operator='magenta',Snippet='purple'}
+  local kinds={Variable='fg',Property='fg',Field='fg',Reference='fg',Constant='orange',Value='orange',EnumMember='orange',Function='blue',Method='blue',Constructor='cyan',Class='cyan',Interface='cyan',Struct='cyan',Enum='cyan',TypeParameter='cyan',Module='cyan',Keyword='purple',Operator='operator',Snippet='purple'}
   for suffix,key in pairs(kinds) do
     for _,prefix in ipairs({'BlinkCmpKind','CmpItemKind'}) do
       local name=prefix..suffix

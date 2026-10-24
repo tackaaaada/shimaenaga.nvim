@@ -28,7 +28,8 @@ M.yukiyo = {
   fg_dark = "#8d9ba0", -- secondary foreground
   comment = "#7d8f92",
 
-  magenta = "#e277aa", -- 桜 (operators, special)
+  magenta = "#e277aa", -- 桜 (special, UI accents)
+  operator = "#d478d2", -- 桜を紫寄りにした演算子色。数値のカエデと区別する
   purple = "#8f91e0", -- ラベンダー (keywords)
   blue = "#3c9ee3", -- 摩周ブルー (functions, info)
   cyan = "#23b4a9", -- 青い池 (types, builtins, hint)
@@ -40,12 +41,12 @@ M.yukiyo = {
 
 -- 流氷 (light): same hue as 雪夜 (~263 deg), whitened (B2)
 M.ryuhyo = {
-  bg = "#e9eef5",
-  bg_dark = "#dfe5ee", -- sidebars, floats (candidate: #e5ebf8 for a clearer edge)
-  bg_highlight = "#d5deeb", -- cursorline (candidate: #dbe2f1 for stronger)
-  fg = "#44556a",
-  fg_dark = "#5c6c80", -- secondary foreground
-  comment = "#657488",
+  bg = "#e3eaf2",
+  bg_dark = "#d4deea", -- sidebars, floats, and statusline
+  bg_highlight = "#cbd8e8", -- cursorline
+  fg = "#3d5067",
+  fg_dark = "#50647a", -- secondary foreground
+  comment = "#566a7f",
 
   magenta = "#b51070",
   purple = "#5146c7",

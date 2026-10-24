@@ -209,7 +209,7 @@ local function render()
   local roles = {
     Text={fg=c.fg}, Muted={fg=c.fg_dark}, Keyword={fg=c.purple}, Function={fg=c.blue},
     Type={fg=c.cyan}, String={fg=c.green}, Constant={fg=c.orange},
-    Operator={fg=c.magenta}, Special={fg=c.magenta}, Punctuation={fg=c.fg_dark}, Bracket={fg=c.bracket},
+    Operator={fg=c.operator}, Special={fg=c.magenta}, Punctuation={fg=c.fg_dark}, Bracket={fg=c.bracket},
     Comment={fg=c.comment,italic=true}, Heading={fg=c.purple,bold=true},
     Link={fg=c.blue,underline=true}, Emphasis={fg=c.fg,italic=true}, Deprecated={fg=c.fg_dark,strikethrough=true},
     Error={fg=c.red}, Warn={fg=c.yellow}, Info={fg=c.blue}, Hint={fg=c.cyan}, Success={fg=c.green},

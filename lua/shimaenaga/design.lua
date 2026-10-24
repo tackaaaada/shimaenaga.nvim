@@ -10,6 +10,7 @@ function M.blend(a,b,amount)
 end
 function M.make(palette)
   local c=vim.deepcopy(palette)
+  c.operator=c.operator or c.magenta
   c.bracket=M.blend(c.orange,c.fg,0.20)
   c.selection=M.blend(c.bg,c.blue,0.22)
   c.search=M.blend(c.bg,c.yellow,0.22)

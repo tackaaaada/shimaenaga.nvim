@@ -8,7 +8,7 @@ for _, style in ipairs({'yukiyo','ryuhyo'}) do
   local p = require('shimaenaga.palette')[style]
   assert(vim.g.colors_name == 'shimaenaga-'..style)
   assert(vim.o.background==(style=='ryuhyo' and 'light' or 'dark'))
-  for group, color in pairs({Normal=p.fg,Comment=p.comment,String=p.green,Keyword=p.purple,Function=p.blue,Type=p.cyan,Number=p.orange,Operator=p.magenta,DiagnosticError=p.red,['@variable.parameter']=p.fg,['@keyword']=p.purple}) do
+  for group, color in pairs({Normal=p.fg,Comment=p.comment,String=p.green,Keyword=p.purple,Function=p.blue,Type=p.cyan,Number=p.orange,Operator=p.operator or p.magenta,DiagnosticError=p.red,['@variable.parameter']=p.fg,['@keyword']=p.purple,['@number']=p.orange,['@operator']=p.operator or p.magenta,['@keyword.operator']=p.operator or p.magenta}) do
     assert(fg(group)==color,style..' '..group..': expected '..color..', got '..fg(group))
   end
   assert(vim.g.terminal_color_1 == p.red)
