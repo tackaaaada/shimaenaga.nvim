@@ -94,6 +94,10 @@ Lualine は表示項目を変えず、テーマと区切りだけ指定できま
 
 ## プレビュー
 
+![雪夜と流氷でTypeScriptの構文色を並べた見本](assets/code-preview.svg)
+
+この画像は不透明な標準配色による見本です。実際の表示は構文解析や透過の設定によっても変わります。
+
 チェックアウトのルートで実行します。普段のNeovim設定は変更しません。
 
 ```sh
@@ -107,6 +111,7 @@ Tabで雪夜／流氷、tで透過、[ / ]で11ページを切り替えます。
 ## 開発と検証
 
 配色の正本は `lua/shimaenaga/palette.lua`。
+配色を変更したら `python scripts/render-code-preview.py` で見本画像を再生成できます。
 NeovimとPython 3.11以降で、単独の検査を実行します。
 
 ```sh

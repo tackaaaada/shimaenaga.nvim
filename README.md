@@ -95,6 +95,10 @@ See the [palette specification](docs/color-spec.md) and [highlight coverage](doc
 
 ## Preview
 
+![TypeScript syntax shown side by side in Yukiyo and Ryuhyo](assets/code-preview.svg)
+
+This illustration uses the default opaque palettes. Actual rendering also depends on your syntax parser and transparency settings.
+
 Run from the checkout root. The preview does not change your regular Neovim configuration.
 
 ```sh
@@ -108,6 +112,7 @@ To preview the loaded colorscheme itself, use `scripts/preview.lua`.
 ## Development and validation
 
 The source palette is `lua/shimaenaga/palette.lua`.
+After changing it, regenerate the code illustration with `python scripts/render-code-preview.py`.
 Use Neovim and Python 3.11 or later to run the standalone checks:
 
 ```sh
